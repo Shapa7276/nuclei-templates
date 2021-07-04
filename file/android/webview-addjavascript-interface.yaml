@@ -1,16 +1,17 @@
 id: webview-addjavascript-interface
 
 info:
-  name: Webview addJavascript Interface Usage
-  author: gaurang
+  name: webview addJavascript Interface Usage
+  author: Sharan
   severity: info
-  tags: android,file
 
 file:
   - extensions:
       - all
+      - txt
 
-    matchers:
-      - type: word
-        words:
-          - ";->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V"
+    extractors:
+      - type: regex
+        name: Last Paramter with Interface_Name
+        regex:
+          - "addJavascriptInterface.*()"
